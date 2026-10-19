@@ -102,35 +102,38 @@ namespace ShardCrateCalculator2
         {
             if (enterMode)
             {
-                real = int.Parse(realShardsTxt.Text);
-                if (goal <= real)
+                if (realShardsTxt.Text.Trim() != "")
                 {
-                    whatTypeLabel.Text = "You already have enough.";
-                    enterBtn.Hide();
-                    realShardsTxt.Hide();
-                }
-                else
-                {
-                    int open;
-                    enterMode = false;
-                    enterBtn.Text = "Continue";
-                    whatTypeLabel.Text = "Press Continue to open more";
-                    realShardsTxt.Hide();
-                    luckyLbl.Show();
-                    luckyNumLbl.Show();
-                    luckyPic.Show() ;
-                     midLbl.Show();
-                    midNumLbl.Show();
-                    midPic.Show();
-                    unluckyLbl.Show();
-                    unluckyNumLbl.Show();
-                    unluckyPic.Show();
-                    open = goal - real;
-                    unluckyNumLbl.Text = open.ToString();
-                    open = (goal - real) / 2;
-                    midNumLbl.Text = open.ToString();
-                    open = (goal - real) / 3;
-                    luckyNumLbl.Text = open.ToString();
+                    real = int.Parse(realShardsTxt.Text);
+                    if (goal <= real)
+                    {
+                        whatTypeLabel.Text = "You already have enough.";
+                        enterBtn.Hide();
+                        realShardsTxt.Hide();
+                    }
+                    else
+                    {
+                        int open;
+                        enterMode = false;
+                        enterBtn.Text = "Continue";
+                        whatTypeLabel.Text = "Press Continue to open more";
+                        realShardsTxt.Hide();
+                        luckyLbl.Show();
+                        luckyNumLbl.Show();
+                        luckyPic.Show();
+                        midLbl.Show();
+                        midNumLbl.Show();
+                        midPic.Show();
+                        unluckyLbl.Show();
+                        unluckyNumLbl.Show();
+                        unluckyPic.Show();
+                        open = goal - real;
+                        unluckyNumLbl.Text = open.ToString();
+                        open = (goal - real) / 2;
+                        midNumLbl.Text = open.ToString();
+                        open = (goal - real) / 3;
+                        luckyNumLbl.Text = open.ToString();
+                    }
                 }
             }
             else
